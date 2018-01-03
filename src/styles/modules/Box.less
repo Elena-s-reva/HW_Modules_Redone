@@ -1,0 +1,123 @@
+.Box {
+    width: 160px;
+    height: 160px;
+    margin: 20px;
+    background-color: blueviolet;
+
+    &-mobile {
+        @media @mobile_xs {
+            margin: @margin_center;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+    }  
+}  
+
+.Box-wrapS {
+    .flexbox;
+    .flex-direction(column);
+    margin-right: 5px;
+    flex: 1;
+
+    @media @mobile_xs {
+        flex: none;
+        width: @full;
+        margin-right: 0;
+    }
+}
+
+.Box-wrapLg {
+    .flexbox;
+    .flex-direction(column);
+    flex: 2;
+
+    @media @mobile_xs {
+        flex: none;
+        width: @full;
+    }
+    .wrap-inside:first-child {
+        
+        @media @mobile_xs {
+            border-top: none;
+        }
+    }
+}
+
+.Box-orderMobile {
+    @media @mobile_xs {
+        order: 1;
+    }
+}
+
+.Box-wrap {
+    width: 50%;
+    .box-sizing(border-box);
+    border: @border;
+    .flexbox;
+    .justify-content(space-between);
+    .align-items(center);
+
+    &-inside {
+        border: @border;
+        .flexbox;
+        .flex-direction(column);
+        .justify-content(center);
+        .align-items(center);
+        margin: 15px;
+        padding: 15px;
+        background-color: aquamarine;
+
+        @media @mobile_xs {
+            width: @full;
+            .flex-direction(row);
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    &-inside:hover {
+        opacity: 0.5;
+    }
+
+    @media @mobile_xs {
+    width: @full;
+    border: none;
+    }
+}
+
+.Box-long {
+    width: 250px;
+    height: 80px;
+    margin: 5px;
+    background-color: red;
+
+    @media @mobile_xs {
+        margin: 0;
+        width: 80px;
+        height: 250px;
+    }
+}
+
+.Box-wrap:first-child {
+     border-right: none;
+}
+
+.Box-wrap-inside {
+    .Box-orderMobileLong {
+        @media @mobile_xs {
+        order: 2;
+        }
+    }
+
+    .Box-orderMobileLongText {
+        @media @mobile_xs {
+        order: 1;
+        }
+    }
+}
+
+.Box-wrap-inside:first-child {
+    @media @mobile_xs {
+    border-bottom: none;        
+    }
+}
